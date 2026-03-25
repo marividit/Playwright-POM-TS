@@ -31,3 +31,4 @@ test.describe('Checkboxes page', () => {
     await pm.checkboxesPage.assertCheckboxesState(false, false);
   });
 });
+}
