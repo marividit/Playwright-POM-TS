@@ -23,6 +23,11 @@ test.describe('Checkboxes page', () => {
        { maxDiffPixelRatio: 0.02 }   // passes up to ~380 px on a 1920×1080 shot
     );
 
+    // Quick ad-hoc assertion using the BasePage `locator()` helper
+    await expect(pm.checkboxesPage.locator('form#checkboxes'))
+      .toBeVisible();
+  });
+
   test('uncheck both checkboxes', async ({ pm }) => {
     // Use POM to open checkboxes page and uncheck both checkboxes
     await pm.checkboxesPage.openCheckboxesPage();
@@ -31,4 +36,3 @@ test.describe('Checkboxes page', () => {
     await pm.checkboxesPage.assertCheckboxesState(false, false);
   });
 });
-}
